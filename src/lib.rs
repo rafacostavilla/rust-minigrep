@@ -25,7 +25,7 @@ pub struct Config{
 }
 
 impl Config {
-    pub fn new(mut args: Args) -> Result<Config, &'static str>{
+    pub fn build(mut args: Args) -> Result<Config, &'static str>{
         // Discard the first argument
         args.next();
 
