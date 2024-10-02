@@ -70,21 +70,23 @@ mod tests{
     use super::*;
 
     #[test]
-    fn search_for_case_sensitive(){
+    fn case_sensitive(){
+        let query = "duct";
         let content = "\
 Rust, bust, viaduct
 trust
 Duct";
         
-        assert_eq!(vec!["Rust, bust, viaduct"], search("duct", content))
+        assert_eq!(vec!["Rust, bust, viaduct"], search(query, content))
     }
     #[test]
-    fn search_for_case_insensitive(){
+    fn case_insensitive(){
+        let query = "dUcT";
         let content = "\
 Rust, bust, viaduct
 trust
 Duct";
         
-        assert_eq!(vec!["Rust, bust, viaduct","Duct"], search_case_insensitive("duct", content));
+        assert_eq!(vec!["Rust, bust, viaduct","Duct"], search_case_insensitive(query, content));
     }
 }
