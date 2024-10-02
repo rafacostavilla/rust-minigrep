@@ -1,7 +1,7 @@
 use std::env;
 use std::process;
 
-use rust_minigrep::*;
+use rust_minigrep::Config;
 
 fn main() {
 
@@ -13,7 +13,7 @@ fn main() {
     println!("Searching for {}", config.query);
     println!("In file {}", config.filename);
     
-    if let Err(e) = run(config){
+    if let Err(e) = rust_minigrep::run(config){
         eprintln!("Application error: {e}");
         process::exit(1);
     } 
